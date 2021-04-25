@@ -13,20 +13,20 @@ func sort(nums []int, left, right int) []int {
         return nums
     }
 
-	pivot, i := right, left
+    pivot, i := right, left
 
-	for index := left; index < pivot; index++ {
-		if nums[index] < nums[pivot] {
-			swap(nums, i, index)
+    for index := left; index < pivot; index++ {
+	if nums[index] < nums[pivot] {
+	    swap(nums, i, index)
             i++
-		}
 	}
+    }
     swap(nums, i, pivot)
     
     sort(nums, left, i - 1)
     sort(nums, i + 1, right)
 
-	return nums
+    return nums
 }
 
 func swap(arr []int, first, second int) {
